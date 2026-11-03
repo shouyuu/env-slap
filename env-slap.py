@@ -14,7 +14,7 @@ SECRET_PATTERNS = [
     (re.compile(r"sk-[a-zA-Z0-9_-]{20,}"), "OpenAI API Key"),
     (re.compile(r"AKIA[0-9A-Z]{16}"), "AWS Access Key ID"),
     (re.compile(r"ghp_[a-zA-Z0-9]{36}"), "GitHub Personal Access Token"),
-    (re.compile(r"-----BEGIN (RSA|PRIVATE) KEY-----"), "Private Key Block"),
+    (re.compile(r"-----BEGIN ((RSA|EC|DSA|OPENSSH|ENCRYPTED) )?PRIVATE KEY-----"), "Private Key Block"),
 ]
 
 def get_staged_files() -> list[str]:
